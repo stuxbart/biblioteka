@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="showcase">
+  <div class="grid-x">
+    <div class="cell large-5 medium-5 large-offset-1 medium-offset-1">
+      <div class="showcase-box">
+        <div class="showcase-box-body">
+          <div class="grid-x">
+            <div class="cell large-4 medium-12 text-center">
+              <h5>Autorzy</h5>
+              <ul>
+                <li class="count">{{ author_count }}</li>
+                <li><a href="{% url 'author_list' %}">Lista</a></li>
+                <li><a href="{% url 'author_create' %}">Dodaj</a></li>
+              </ul>
+            </div>
+            <div class="cell large-4 medium-12 text-center">
+              <h5>Książki</h5>
+              <ul>
+                <li class="count">{{ book_count }}</li>
+                <li><a href="{% url 'book_list' %}">Lista</a></li>
+                <li><a href="{% url 'book_create' %}">Dodaj</a></li>
+              </ul>
+            </div>
+            <div class="cell large-4 medium-12 text-center">
+              <h5>Wydawnictwa</h5>
+              <ul>
+                <li class="count">{{ publisher_count }}</li>
+                <li><a href="{% url 'publisher_list' %}">Lista</a></li>
+                <li><a href="{% url 'publisher_create' %}">Dodaj</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-box-bottom">
+          <div class="grid-x">
+            <div class="cell large-12 medium-12 text-center">
+              <h5>
+                <a href="{% url 'book_create' %}"
+                  ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i
+                  >Dodaj Ksiązkę</a
+                >
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

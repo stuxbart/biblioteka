@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div data-sticky-container class="sticky-container" id="top-sticky">
+        <div class="top-bar" data-sticky="wyhkus-sticky" data-sticky-class="sticky" data-options="marginTop: 0;">
+            <div class="top-bar-left">
+                <h3><a href="index.html"><span>Biblio</span>teka</a></h3>
+              </div>
+              <div class="top-bar-right">
+                <ul class="menu">
+                  <li><a href="book_list.html" class="current">Książki</a></li>
+                  <li><a href="authors.html">Autorzy</a></li>
+                  <li><a href="vps.html">Wydawnictwa</a></li>
+                  <li><a href="dedicated.html">Statystyki</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    <main>
+        <div class="grid-x">
+            <div class="cell large-8 medium-8 large-offset-1">
+                <h1 class="title">Dodaj Ksiązkę</h1>
+                <form>
+                    <div class="grid-container">
+                      <div class="grid-x grid-padding-x">
+                        <div class="medium-6 cell">
+                          <label>Tytuł
+                            <input type="text" placeholder="Tytuł...">
+                          </label>
+                        </div>
+                        <div class="medium-3 cell">
+                          <label>Liczba Stron
+                            <input type="text" placeholder="69">
+                          </label>
+                        </div>
+                        <div class="medium-3 cell">
+                            <label>Rok Wydania
+                              <input type="text" placeholder="1939">
+                            </label>
+                          </div>
+                        </div>
+                        <div class="medium-6 cell">
+                            <label>Autorzy
+                                <select multiple>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="medium-6 cell">
+                            <label>Wydawnictwo
+                                <select>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                  <option value="Lorem">Lorem, ipsum.</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                    <button href="#" class="button expanded add-button">Dodaj</button>
+                  </form>
+            </div>
+
+            <div class="large-3 cell medium-3 right" data-sticky-container>
+                <div class="sticky right-panel" data-sticky data-margin-top="0">
+                    <div class="grid-x">
+                        <div class="cell large-10 large-offset-1">
+                            <ul class="vertical menu">
+                                <h5>Menu</h5>
+                                <li><a href="#">Dodaj Książkę</a></li>
+                                <li><a href="#">Dodaj Autora</a></li>
+                                <li><a href="#">Dodaj Wydawnictwo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<main>
+  <div class="grid-x">
+    <div class="cell large-8 medium-8 large-offset-1">
+      <h1 class="title">{{ action }} Wydawnictwo</h1>
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
+            <div class="cell">
+              <label> Nazwa {{ form.name }} </label>
+            </div>
+          </div>
+        </div>
+        <button class="button expanded add-button">{{ action }}</button>
+      </form>
+    </div>
+    {% include 'right_menu.html' %}
+  </div>
+</main>
+{% endblock %}

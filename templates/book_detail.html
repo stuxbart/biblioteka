@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<main>
+  <div class="grid-x">
+    <div class="cell large-8 medium-8 large-offset-1">
+      <div class="info-box">
+        <div class="grid-x">
+          <div class="cell large-8 medium-8">
+            <h2 class="author-title">{{ object }}</h2>
+            <p class="muted">Data dodania: {{ object.create }}</p>
+            <p class="muted">
+              Autorzy: {% for author in object.author.all %}
+              <a href="{% url 'author_books' author.pk %}">{{ author }}</a>
+              {% endfor %}
+            </p>
+            <p class="muted">
+              {% if object.publisher %} Wydawnictwo:
+              <a href="{% url 'publisher_books' object.publisher.pk %}"
+                >{{ object.publisher }}</a
+              >
+              {% else %} Wydawnictwo: Brak {% endif %}
+            </p>
+          </div>
+          <div class="cell large-4 medium-4">
+            <div class="button-group detail-buttons">
+              <a href="{% url 'book_update' object.pk %}" class="primary button"
+                >Edytuj</a
+              >
+              <a href="{% url 'book_delete' object.pk %}" class="alert button"
+                >Usuń</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'right_menu.html' %}
+  </div>
+</main>
+{% endblock %}

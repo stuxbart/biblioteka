@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+{% load book_extras %} 
+
+{% block content %}
+<main>
+  <div class="grid-x">
+    <div class="cell large-8 medium-8 large-offset-1">
+      <div class="list-box" id="list-box">
+        <ul class="grid-x">
+          {% for publisher in page_obj %}
+          <li class="list-item cell">
+            <div class="grid-x list-item-grid">
+              <div class="cell large-9 medium-9 book-info">
+                <span class="book-num">
+                  {{ forloop.counter|add:page_obj.start_index|add:-1 }}
+                </span>
+                <a
+                  class="author-name"
+                  href="{% url 'publisher_books' publisher.pk %}"
+                >
+                  {{ publisher }}
+                </a>
+                <span class="author-book-count">
+                  <b>{{ publisher.book_count }}</b> Książ{{ publisher.book_count|endings }}
+                </span>
+              </div>
+              <div class="cell large-3 medium-3">
+                <div class="small button-group align-right">
+                  <a
+                    href="{% url 'publisher_update' publisher.pk %}"
+                    class="primary button"
+                    >Edytuj</a
+                  >
+                  <a
+                    href="{% url 'publisher_delete' publisher.pk %}"
+                    class="alert button"
+                    >Usuń</a
+                  >
+                </div>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% include 'paginator.html' with page_obj=page_obj %}
+    </div>
+    {% include 'right_menu.html' %}
+  </div>
+</main>
+{% endblock %}

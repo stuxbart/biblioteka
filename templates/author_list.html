@@ -1,0 +1,58 @@
+{% extends 'base.html' %} 
+{% load book_extras %} 
+
+{% block content %}
+<main>
+  <div class="grid-x">
+    <div class="cell large-8 medium-8 large-offset-1">
+      <div class="list-box" id="list-box">
+        <ul class="grid-x">
+          {% for author in page_obj %}
+          <li class="list-item cell">
+            <div class="grid-x list-item-grid">
+              <div class="cell large-9 medium-9 book-info">
+                <span class="book-num">
+                  {{ forloop.counter|add:page_obj.start_index|add:-1 }}
+                </span>
+                <a
+                  class="author-name"
+                  href="{% url 'author_books' author.pk %}"
+                >
+                  {{ author }}
+                </a>
+                <span class="author-book-count">
+                  <span class="grid-x">
+                    <span class="cell small-6 text-right">
+                      <b>{{ author.book_count }}</b>
+                    </span>
+                    <span class="cell small-6 text-left">
+                      &nbsp;Książ{{ author.book_count|endings }}
+                    </span>
+                  </span>
+                </span>
+              </div>
+              <div class="cell large-3 medium-3">
+                <div class="small button-group align-right">
+                  <a
+                    href="{% url 'author_update' author.pk %}"
+                    class="primary button"
+                    >Edytuj</a
+                  >
+                  <a
+                    href="{% url 'author_delete' author.pk %}"
+                    class="alert button"
+                    >Usuń</a
+                  >
+                </div>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% include 'paginator.html' with page_obj=page_obj %}
+    </div>
+    {% include 'right_menu.html' %}
+  </div>
+</main>
+{% endblock %}

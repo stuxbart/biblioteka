@@ -1,0 +1,88 @@
+{% extends 'base.html' %} 
+{% load book_extras %} 
+
+{% block content %}
+<main>
+  <div class="grid-x">
+    <div class="cell large-8 medium-8 large-offset-1">
+      <div class="info-box">
+        <div class="grid-x">
+          <div class="cell large-8 medium-8">
+            <h2 class="author-title">{{ object }}</h2>
+            <p class="muted">Data dodania: {{ object.create }}</p>
+            <p class="muted">
+              Książki: <span class="books-count">{{ object.book_count }}</span>
+            </p>
+          </div>
+          <div class="cell large-4 medium-4">
+            <div class="button-group detail-buttons">
+              <a
+                href="{% url 'publisher_update' object.pk %}"
+                class="primary button"
+                >Edytuj</a
+              >
+              <a
+                href="{% url 'publisher_delete' object.pk %}"
+                class="alert button"
+                >Usuń</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-box" id="list-box">
+        <ul class="grid-x">
+          {% for book in page_obj %}
+          <li class="list-item cell">
+            <div class="grid-x list-item-grid">
+              <div class="cell large-10 medium-9 book-info">
+                <div class="grid-x">
+                  <div class="cell large-7 medium-7">
+                    <span class="book-num">
+                      {{ forloop.counter|add:page_obj.start_index|add:-1 }}
+                    </span>
+                    <a
+                      class="book-title"
+                      href="{% url 'book_detail' book.pk %}"
+                    >
+                      {{ book.title }}
+                    </a>
+                  </div>
+                  <div class="cell large-4 medium-4 small-6">
+                    <a
+                      class="book-author"
+                      href="{% url 'author_books' book.author.first.pk %}"
+                    >
+                      {{ book.author.first }}
+                    </a>
+                  </div>
+                  <div class="cell large-1 medium-1 small-6">
+                    <span class="book-date"> {{ book.publish_year }} </span>
+                  </div>
+                </div>
+              </div>
+              <div class="cell large-2 medium-3">
+                <div class="small button-group align-right">
+                  <a
+                    href="{% url 'book_update' book.pk %}?next={{ request.path }}"
+                    class="primary button"
+                    >Edytuj</a
+                  >
+                  <a
+                    href="{% url 'book_delete' book.pk %}?next={{ request.path }}"
+                    class="alert button"
+                    >Usuń</a
+                  >
+                </div>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% include 'paginator.html' with page_obj=page_obj %}
+    </div>
+    {% include 'right_menu.html' %}
+  </div>
+</main>
+{% endblock %}

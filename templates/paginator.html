@@ -1,0 +1,39 @@
+<div class="paginator">
+  <nav aria-label="Pagination">
+    <ul class="pagination text-center">
+      {% if page_obj.has_previous %}
+      <li class="pagination-previous">
+        <a
+          href="{% url 'book_list' %}?page={{ page_obj.previous_page_number }}"
+          aria-label="Next page"
+        >
+          Poprzednia
+        </a>
+      </li>
+      {% else %}
+      <li class="pagination-previous disabled">Poprzednia</li>
+      {% endif %}
+
+      <li class="current">
+        <a
+          href="{% url 'book_list' %}?page={{ page_obj.number }}"
+          aria-label="Page {{ page_obj.number }}"
+        >
+          {{ page_obj.number }}
+        </a>
+      </li>
+      {% if page_obj.has_next %}
+      <li class="pagination-next">
+        <a
+          href="{% url 'book_list' %}?page={{ page_obj.next_page_number }}"
+          aria-label="Next page"
+        >
+          Następna
+        </a>
+      </li>
+      {% else %}
+      <li class="pagination-next disabled">Następna</li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>

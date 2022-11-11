@@ -1,0 +1,26 @@
+{% url 'book_list' as book_url %} 
+{% url 'author_list' as author_url %} 
+{% url 'publisher_list' as publisher_url %}
+
+<div data-sticky-container class="sticky-container" id="top-sticky">
+  <div
+    class="top-bar"
+    data-sticky
+    data-sticky-class="sticky"
+    data-options="marginTop: 0;"
+  >
+    <div class="top-bar-left">
+      <h3>
+        <a href="{% url 'home' %}"><span>Biblio</span>teka</a>
+      </h3>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><a href="{{ book_url }}" {% if request.path == book_url %} class="current" {% endif %}>Książki</a></li>
+        <li><a href="{{ author_url }}" {% if request.path == author_url %}class="current"{% endif %}>Autorzy</a></li>
+        <li><a href="{{ publisher_url }}" {% if request.path == publisher_url %}class="current"{% endif %}>Wydawnictwa</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ 

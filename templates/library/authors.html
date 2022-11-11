@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div data-sticky-container class="sticky-container" id="top-sticky">
+      <div
+        class="top-bar"
+        data-sticky="wyhkus-sticky"
+        data-sticky-class="sticky"
+        data-options="marginTop: 0;"
+      >
+        <div class="top-bar-left">
+          <h3>
+            <a href="index.html"><span>Biblio</span>teka</a>
+          </h3>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><a href="book_list.html" class="current">Książki</a></li>
+            <li><a href="authors.html">Autorzy</a></li>
+            <li><a href="vps.html">Wydawnictwa</a></li>
+            <li><a href="dedicated.html">Statystyki</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div class="grid-x">
+        <div class="cell large-8 medium-8 large-offset-1">
+          <div class="list-box" id="list-box">
+            <ul class="grid-x">
+              <li class="list-item cell">
+                <div class="grid-x list-item-grid">
+                  <div class="cell large-9 medium-9 book-info">
+                    <span class="book-num"> 1 </span>
+                    <span class="author-name"> Book Name </span>
+                    <span class="author-book-count"> <b>10</b> Książek </span>
+                  </div>
+                  <div class="cell large-3 medium-3">
+                    <div class="small button-group align-right">
+                      <a class="primary button">Edit</a>
+                      <a class="alert button">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="paginator">
+            <nav aria-label="Pagination">
+              <ul class="pagination text-center">
+                <li class="pagination-previous disabled">Previous</li>
+                <li class="current">
+                  <span class="show-for-sr">You're on page</span> 1
+                </li>
+                <li><a href="#" aria-label="Page 2">2</a></li>
+                <li><a href="#" aria-label="Page 3">3</a></li>
+                <li><a href="#" aria-label="Page 4">4</a></li>
+                <li class="ellipsis"></li>
+                <li><a href="#" aria-label="Page 12">12</a></li>
+                <li><a href="#" aria-label="Page 13">13</a></li>
+                <li class="pagination-next">
+                  <a href="#" aria-label="Next page">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="large-3 cell medium-3 right" data-sticky-container>
+          <div class="sticky right-panel" data-sticky data-margin-top="0">
+            <div class="grid-x">
+              <div class="cell large-10 large-offset-1">
+                <ul class="vertical menu">
+                  <h5>Menu</h5>
+                  <li><a href="create_book.html">Dodaj Książkę</a></li>
+                  <li><a href="#">Dodaj Autora</a></li>
+                  <li><a href="#">Dodaj Wydawnictwo</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+.top-bar{
+    color: $black;
+    padding: 20px 20px 20px 30px;
+    text-transform: uppercase;
+
+    h3 {
+        font-weight: bold;
+        a{
+            color: $black;
+        }
+        span{
+            padding: 5px;
+            background-color: $secondary;
+            color: $white;
+            -webkit-box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.65);
+            -moz-box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.65);
+            box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.65);
+        }
+    }
+
+    .top-bar-right{
+        @include breakpoint(small only){
+            h3{
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            li {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        a {
+            font-weight: 500;
+            color: $black;
+            border-bottom: 3px solid $black;
+        }
+
+        a.current{
+            color: $secondary;
+            border-bottom: 3px solid $secondary;
+        }
+
+        a:hover {
+            color: $third;
+            border-bottom: 3px solid $third;
+        }
+    }
+    transition: 0.1s all;
+}
+
+.top-bar.is-stuck.sticky.is-at-top{
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.65);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.233);
+}
+.is-stuck.sticky.is-at-top{
+    border-bottom: 1px solid $medium-gray;
+}
+
+.showcase{
+    min-height: 450px;
+    color: $white;
+    background: url('../imgs/book.png') no-repeat 90% 50%;
+    @include breakpoint(small only){
+        background: none;
+    }
+    @include breakpoint(large){
+        background-position: 80% 0;
+    }
+    
+    .showcase-box{
+        margin-top: 15vh;
+        @include breakpoint(small only){
+            margin-top: 5vh;
+        }
+        -webkit-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.65);
+        -moz-box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.65);
+        box-shadow: 10px 10px 13px -6px rgba(0,0,0,0.65);
+        border-radius: 10px;
+    }
+
+    .showcase-box-body{
+        padding: 40px 20px;
+        background-color: $black;
+        color: $white;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+
+        ul{
+            margin: 0;
+            list-style: none;
+
+            li {
+                padding-bottom: 10px;
+
+                a{
+                    color: $white;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .count {
+            font-size: 40px;
+            font-weight: 600;
+            padding: 5px;
+        }
+
+        h5{
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .cell{
+            padding-bottom: 30px;
+        }
+
+        .cell:nth-child(2){
+            border-top: 2px solid $dark-gray;
+            border-bottom: 2px solid $dark-gray;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        @include breakpoint(large) {
+
+            .cell:nth-child(2){
+                padding-top: 0;
+                border: none;
+                border-left: 2px solid $dark-gray;
+                border-right: 2px solid $dark-gray;
+            }
+
+            .cell:nth-child(2){
+                .count {
+                    font-size: 50px;
+                    padding-bottom: 20px;
+                }
+                padding-bottom: 20px;
+                
+            }
+
+            .cell:nth-child(1), .cell:nth-child(3){
+                padding-top: 30px;
+            }
+
+        }
+
+    }
+    
+    .showcase-box-bottom {
+        padding: 5px 30px;
+        background: $secondary;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        
+        a {
+            color: $white;
+            font-weight: 600;
+        }
+
+        .cell{
+            padding: 15px 0;
+        }
+    }
+}
+
+.list-box{
+    margin-top: 30px;
+    ul{
+        list-style: none;
+    }
+    
+}
+
+.list-item{
+    background-color: $white;
+    padding: 10px 15px;
+    margin: 5px 0;
+    font-size: 16px;
+    border-bottom: 2px solid $light-gray;
+
+    .list-item-grid{
+        align-items: center;
+    }
+
+    .book-info{
+        padding-right: 15px;
+    }
+
+    .book-num{
+        color: $dark-gray;
+        margin: 0 15px 0 5px;
+    }
+
+    .book-title, .author-name{
+        font-weight: 600;
+    }
+
+    .book-author, .book-date, .author-book-count{
+        margin: 0 10px;
+        vertical-align: center;
+        float: right;
+        font-size: 14px;
+        color: $dark-gray;
+    }
+
+    .button-group{
+        margin: 0;
+    }
+
+    a.author-name, a.book-title{
+        color: $black;
+    }
+    
+}
+
+.right-panel{
+  
+    ul{
+        padding: 20px 25px 35px 25px;
+        background-color: $white;
+        border-bottom: 2px solid $light-gray;
+
+        li{
+            margin: 10px 0 0 0;
+            border-bottom: 1px solid $medium-gray;
+
+            a{
+                color: $black;
+            }
+        }        
+    }
+}
+
+@include breakpoint(medium){
+    .right-container{
+        position: fixed;
+        top: 8em;
+        width: inherit;
+    }
+}
+.is-stuck.sticky.is-at-top.right-panel{
+    position: fixed;
+    top: 0;
+    padding-top: 8em;
+    border-bottom: none;
+}
+
+.paginator{
+    padding: 15px 0 30px 0;
+}
+
+.title{
+    padding: 20px;
+}
+
+.add-button{
+    margin: 10px;
+}
+
+.pagination{
+    li.current{
+        a{
+            color: $white;
+        }
+    }
+    a{
+        display: unset;
+        padding: 0;
+    }
+    a:hover{
+        background: none;
+    }
+}
+
+.centered{
+    position: absolute; 
+    top:50%; 
+    left:50%; 
+    transform: translate(-50%, -50%);
+}
+
+.author-title{
+    padding: 10px;
+    font-weight: 600;
+}
+
+.muted{
+    color: $dark-gray;
+    margin: 0 15px 0 5px;
+    font-size: 14px;
+}
+
+.detail-buttons{
+    padding: 20px 15px 10px 10px;
+}
+
+.books-count {
+    vertical-align: middle;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 5px;
+}
